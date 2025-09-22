@@ -10,17 +10,17 @@ This is the workshop handout. Each section includes a short goal, commands, and 
 ## Repo layout & branches you’ll create
 
 ```
-00-boot
-01-agent-basics
-02-typed-output
-03-tools-fundamentals
-04-mcp-stdio
-05-mcp-http
-06-usage-limits-retries
-07-pattern-router
-08-pattern-pipeline
-09-pattern-critic-editor
-10-tests-and-evals
+boot
+agent-basics
+typed-output
+tools-fundamentals
+mcp-stdio
+mcp-http
+usage-limits-retries
+pattern-router
+pattern-pipeline
+pattern-critic-editor
+tests-and-evals
 ```
 
 > Models in the examples use `gemini-2.5-flash`. Swap to any provider/model your team uses by changing the model string and setting the corresponding API key.
@@ -116,9 +116,8 @@ This will be the starting point of our workshop.
 
 ---
 
-# 00-boot — Project scaffolding & smoke test
+# boot — Project scaffolding & smoke test
 
-(If you feel lost go to the finished section of this at `git checkout 00-boot` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Create a clean Python 3.12 project, install PydanticAI (with MCP), and run a minimal agent.
 
@@ -175,9 +174,8 @@ hello workshop
 
 ---
 
-# 01-agent-basics — Minimal agent (sync/async) + streaming
+# agent-basics — Minimal agent (sync/async) + streaming
 
-(If you feel lost go to the finished section of this at `git checkout 01-agent-basics` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Use `run_sync`, `run`, and stream final text with `run_stream`.
 
@@ -246,9 +244,8 @@ uv run src/agent_basics.py
 
 ---
 
-# 02-typed-output — Pydantic models & unions
+# typed-output — Pydantic models & unions
 
-(If you feel lost go to the finished section of this at `git checkout 02-typed-output` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Enforce structure using `output_type` with Pydantic models. Use a union for graceful fallback.
 
@@ -308,9 +305,8 @@ uv run src/typed_output.py
 
 ---
 
-# 03-tools-fundamentals — `@agent.tool` and `RunContext`
+# tools-fundamentals — `@agent.tool` and `RunContext`
 
-(If you feel lost go to the finished section of this at `git checkout 03-tools-fundamentals` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Add function tools the model can call. Access conversation context via `RunContext`.
 
@@ -359,9 +355,8 @@ uv run src/tools_fundamentals.py
 
 ---
 
-# 04-mcp-stdio — Use a local MCP server as a toolset (subprocess)
+# mcp-stdio — Use a local MCP server as a toolset (subprocess)
 
-(If you feel lost go to the finished section of this at `git checkout 04-mcp-stdio` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Create a pure-Python MCP server with useful tools and connect via stdio transport.
 
@@ -439,9 +434,8 @@ uv run src/mcp_stdio_client.py
 
 ---
 
-# 05-mcp-http — Connect to an MCP server over Streamable HTTP
+# mcp-http — Connect to an MCP server over Streamable HTTP
 
-(If you feel lost go to the finished section of this at `git checkout 05-mcp-http` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Run the same server over HTTP instead of stdio for network access.
 
@@ -522,9 +516,8 @@ uv run src/mcp_http_client.py
 
 ---
 
-# 06-usage-limits-retries — Guardrails and resilient calls
+# usage-limits-retries — Guardrails and resilient calls
 
-(If you feel lost go to the finished section of this at `git checkout 06-usage-limits-retries` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Bound work with `UsageLimits`, and show retry/backoff using Tenacity in a tool (no external network required).
 
@@ -569,9 +562,8 @@ uv run src/limits_retries.py
 
 ---
 
-# 07-pattern-router — Router/Delegator with typed outcomes
+# pattern-router — Router/Delegator with typed outcomes
 
-(If you feel lost go to the finished section of this at `git checkout 07-pattern-router` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Route to specialist agents using output functions, with a typed failure fallback.
 
@@ -631,9 +623,8 @@ uv run src/pattern_router.py
 
 ---
 
-# 08-pattern-pipeline — Deterministic stages & idempotent steps
+# pattern-pipeline — Deterministic stages & idempotent steps
 
-(If you feel lost go to the finished section of this at `git checkout 08-pattern-pipeline` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Chain multiple agents programmatically for a predictable, testable flow.
 
@@ -705,9 +696,7 @@ uv run src/pattern_pipeline.py
 
 ---
 
-# 09-pattern-critic-editor — Two-role refinement loop
-
-(If you feel lost go to the finished section of this at `git checkout 09-pattern-critic-editor` and run `uv sync --all-groups --all-extras`)
+# pattern-critic-editor — Two-role refinement loop
 
 **Goal:** Improve draft quality with a bounded Editor↔Critic loop.
 
@@ -769,9 +758,8 @@ uv run src/pattern_critic_editor.py
 
 ---
 
-# 10-tests-and-evals — Fast, no-network CI
+# tests-and-evals — Fast, no-network CI
 
-(If you feel lost go to the finished section of this at `git checkout 10-tests-and-evals` and run `uv sync --all-groups --all-extras`)
 
 **Goal:** Prevent accidental live calls and test patterns by overriding models.
 
@@ -833,3 +821,5 @@ uv run -m pytest -q
 - **Repro:** Commit your `uv.lock` to pin dependency versions for the workshop.
 
 You now have a compact, production-shaped toolkit: typed agents, practical MCP integrations, and three multi-agent patterns (Router, Pipeline, Critic–Editor) that scale from MVP to real-world workloads—without rewriting your stack.
+
+#CTTO DURIANPY
