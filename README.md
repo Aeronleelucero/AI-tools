@@ -1,13 +1,10 @@
 [README.md](https://github.com/user-attachments/files/22465539/README.md)
 # The Startup’s Guide to PydanticAI + MCP
 
-### A hands-on workshop (cloud-agnosticy, no vendor lock-in)
+### (cloud-agnosticy, no vendor lock-in)
 
-This is the workshop handout. Each section includes a short goal, commands, and **copy-pasteable code** with file paths. If someone falls behind, you can checkpoint the repo by committing at the end of each section.
 
----
-
-## Repo layout & branches you’ll create
+##  layout & branches you’ll create
 
 ```
 boot
